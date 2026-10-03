@@ -17,7 +17,14 @@ function load() {
 }
 
 function save() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(exercises));
+  // If the browser blocks storage (some do for local files), keep working
+  // in memory and warn instead of crashing before the page updates.
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(exercises));
+    document.getElementById("storage-warning").hidden = true;
+  } catch {
+    document.getElementById("storage-warning").hidden = false;
+  }
 }
 
 function today() {

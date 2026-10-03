@@ -1,7 +1,19 @@
+:root {
+  --bg: #121316;
+  --card: #1c1e23;
+  --text: #e8e9ec;
+  --muted: #9aa0aa;
+  --border: #3a3d45;
+  --accent: #3b82f6;
+  --btn-secondary: #2c2f36;
+  --up: #4ade80;
+  --down: #f87171;
+}
+
 body {
   font-family: system-ui, sans-serif;
-  background: #f4f5f7;
-  color: #222;
+  background: var(--bg);
+  color: var(--text);
   margin: 0;
 }
 
@@ -19,7 +31,9 @@ form {
 input {
   padding: 8px;
   font-size: 1rem;
-  border: 1px solid #bbb;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
   border-radius: 6px;
 }
 
@@ -28,26 +42,30 @@ button {
   font-size: 1rem;
   border: none;
   border-radius: 6px;
-  background: #2563eb;
+  background: var(--accent);
   color: white;
   cursor: pointer;
 }
 
 button.secondary {
-  background: #e5e7eb;
-  color: #222;
+  background: var(--btn-secondary);
+  color: var(--text);
 }
 
 #add-exercise-form input {
   flex: 1;
 }
 
+#storage-warning {
+  color: var(--down);
+}
+
 .exercise {
-  background: white;
+  background: var(--card);
   border-radius: 8px;
   padding: 12px 16px;
   margin-top: 16px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
 }
 
 .exercise-header {
@@ -62,12 +80,12 @@ button.secondary {
 }
 
 .previous {
-  color: #555;
+  color: var(--muted);
   font-size: 0.9rem;
 }
 
-.progress-up { color: #16a34a; font-weight: 600; }
-.progress-down { color: #dc2626; font-weight: 600; }
+.progress-up { color: var(--up); font-weight: 600; }
+.progress-down { color: var(--down); font-weight: 600; }
 
 .set-form input {
   width: 80px;
